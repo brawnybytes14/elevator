@@ -39,6 +39,7 @@ public class ElevatorCar {
                 setDisplay();
                 showDisplay();
                 if(i == destinationFloor) {
+                    elevatorDoor.openDoor();
                     return true;
                 }
             }
@@ -52,6 +53,7 @@ public class ElevatorCar {
                 setDisplay();
                 showDisplay();
                 if(i == destinationFloor) {
+                    elevatorDoor.openDoor();
                     return true;
                 }
             }
