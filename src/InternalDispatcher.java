@@ -11,6 +11,8 @@ public class InternalDispatcher {
     List<ElevatorController>  elevatorControllerList;
 
     public void submitInternalRequest(int floor, ElevatorCar elevatorCar){
-
+        for(ElevatorController elevatorController : elevatorControllerList) {
+            elevatorController.submitInternalRequest(floor, elevatorCar);
+        }
     }
 }

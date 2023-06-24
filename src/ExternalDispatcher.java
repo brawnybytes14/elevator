@@ -1,15 +1,13 @@
 import java.util.List;
 
 public class ExternalDispatcher {
+
+    List<ElevatorController>  elevatorControllerList;
     public void setElevatorControllerList(List<ElevatorController> elevatorControllerList) {
         this.elevatorControllerList = elevatorControllerList;
     }
 
-    List<ElevatorController>  elevatorControllerList;
-
     public void submitExternalRequest(int floor, Direction direction){
-        for(ElevatorController elevatorController : elevatorControllerList) {
-           elevatorController.submitExternalRequest(floor, direction);
-        }
+        elevatorControllerList.get(0).submitExternalRequest(floor, direction);
     }
 }

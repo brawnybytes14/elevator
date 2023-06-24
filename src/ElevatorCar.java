@@ -7,8 +7,8 @@ public class ElevatorCar {
     Direction elevatorDirection;
     ElevatorDoor elevatorDoor;
 
-    public ElevatorCar(int id){
-        this.id = id;
+    public ElevatorCar(int id) {
+        id = id;
         display = new ElevatorDisplay();
         internalButtons = new InternalButtons();
         elevatorState = ElevatorState.IDLE;
@@ -29,7 +29,30 @@ public class ElevatorCar {
     }
 
     boolean moveElevator(Direction dir, int destinationFloor){
+        int startFloor = currentFloor;
+        if(dir == Direction.UP) {
+            for(int i = startFloor; i<=destinationFloor; i++) {
+
+                this.currentFloor = startFloor;
+                setDisplay();
+                showDisplay();
+                if(i == destinationFloor) {
+                    return true;
+                }
+            }
+        }
+
+        if(dir == Direction.DOWN) {
+            for(int i = startFloor; i>=destinationFloor; i--) {
+
+                this.currentFloor = startFloor;
+                setDisplay();
+                showDisplay();
+                if(i == destinationFloor) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
-
 }

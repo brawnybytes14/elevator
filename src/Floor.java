@@ -10,7 +10,6 @@ public class Floor {
     }
 
     public void pressButton(Direction direction) {
-
         externalDispatcher.submitExternalRequest(floorNumber, direction);
     }
 }

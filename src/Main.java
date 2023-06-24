@@ -13,8 +13,11 @@ public class Main {
         ExternalDispatcher externalDispatcher = new ExternalDispatcher();
         InternalDispatcher internalDispatcher = new InternalDispatcher();
 
-        externalDispatcher.setElevatorControllerList(List.of(controller1, controller2));
-        internalDispatcher.setElevatorControllerList(List.of(controller1, controller2));
+        List<ElevatorController> elevatorControllerList = new ArrayList<>();
+        elevatorControllerList.add(controller1);
+        elevatorControllerList.add(controller2);
+        externalDispatcher.setElevatorControllerList(elevatorControllerList);
+        internalDispatcher.setElevatorControllerList(elevatorControllerList);
 
         List<Floor> floorList = new ArrayList<>();
         Floor floor1 = new Floor(1);
@@ -31,7 +34,17 @@ public class Main {
 
         Building building = new Building(floorList);
 
-        externalDispatcher.submitExternalRequest(0, Direction.UP);
 
+
+        ExternalButtons externalButtons = new ExternalButtons();
+        externalButtons.setDispatcher(externalDispatcher);
+
+        InternalButtons internalButtons = new InternalButtons();
+        internalButtons.setDispatcher(internalDispatcher);
+
+
+
+        externalButtons.pressButton(2, Direction.UP);
+        internalButtons.pressButton(5, new ElevatorCar(2));
     }
 }
