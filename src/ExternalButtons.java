@@ -8,7 +8,6 @@ public class ExternalButtons {
 
     void pressButton(int currentFloor, Direction dir) {
         dispatcher.submitExternalRequest(currentFloor, dir);
-        controlElevator();
     }
 
     void controlElevator(){

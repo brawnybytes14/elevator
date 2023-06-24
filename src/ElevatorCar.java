@@ -34,6 +34,8 @@ public class ElevatorCar {
             for(int i = startFloor; i<=destinationFloor; i++) {
 
                 this.currentFloor = startFloor;
+                System.out.println("Current Floor: " + startFloor);
+
                 setDisplay();
                 showDisplay();
                 if(i == destinationFloor) {
@@ -46,6 +48,7 @@ public class ElevatorCar {
             for(int i = startFloor; i>=destinationFloor; i--) {
 
                 this.currentFloor = startFloor;
+                System.out.println("Current Floor: " + startFloor);
                 setDisplay();
                 showDisplay();
                 if(i == destinationFloor) {

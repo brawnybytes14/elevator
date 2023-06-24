@@ -9,7 +9,6 @@ public class InternalButtons {
 
     void pressButton(int destination, ElevatorCar elevatorCar) {
         dispatcher.submitInternalRequest(destination, elevatorCar);
-        controlElevator();
     }
 
     void controlElevator(){

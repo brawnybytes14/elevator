@@ -1,3 +1,4 @@
+import java.util.Date;
 import java.util.PriorityQueue;
 
 public  class ElevatorController {
@@ -27,10 +28,20 @@ public  class ElevatorController {
     }
 
     public void controlElevator(){
-        if(elevatorCar.elevatorDirection == Direction.UP){
-            elevatorCar.moveElevator(Direction.UP, upMinPQ.poll());
-        } else {
-            elevatorCar.moveElevator(Direction.DOWN, downMaxPQ.poll());
+        while(true){
+            if(elevatorCar.elevatorDirection == Direction.UP){
+                if(upMinPQ.isEmpty()){
+                    elevatorCar.elevatorDirection = Direction.DOWN;
+                    continue;
+                }
+                elevatorCar.moveElevator(Direction.UP, upMinPQ.poll());
+            } else {
+                if(downMaxPQ.isEmpty()){
+                    elevatorCar.elevatorDirection = Direction.UP;
+                    continue;
+                }
+                elevatorCar.moveElevator(Direction.DOWN, downMaxPQ.poll());
+            }
         }
     }
 }

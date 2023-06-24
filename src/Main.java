@@ -42,8 +42,13 @@ public class Main {
         InternalButtons internalButtons = new InternalButtons();
         internalButtons.setDispatcher(internalDispatcher);
 
-        externalButtons.pressButton(2, Direction.UP);
 
+        externalButtons.pressButton(2, Direction.UP);
         internalButtons.pressButton(5, new ElevatorCar(2));
+
+
+        for (ElevatorController ec :elevatorControllerList) {
+            ec.controlElevator();
+        }
     }
 }
