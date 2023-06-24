@@ -33,8 +33,8 @@ public class ElevatorCar {
         if(dir == Direction.UP) {
             for(int i = startFloor; i<=destinationFloor; i++) {
 
-                this.currentFloor = startFloor;
-                System.out.println("Current Floor: " + startFloor);
+                this.currentFloor = i;
+                System.out.println("Current Floor: " + this.currentFloor);
 
                 setDisplay();
                 showDisplay();
@@ -47,8 +47,8 @@ public class ElevatorCar {
         if(dir == Direction.DOWN) {
             for(int i = startFloor; i>=destinationFloor; i--) {
 
-                this.currentFloor = startFloor;
-                System.out.println("Current Floor: " + startFloor);
+                this.currentFloor = i;
+                System.out.println("Current Floor: " + this.currentFloor);
                 setDisplay();
                 showDisplay();
                 if(i == destinationFloor) {
