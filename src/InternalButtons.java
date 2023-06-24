@@ -1,11 +1,11 @@
 
 public class InternalButtons {
 
+    InternalDispatcher dispatcher;
+
     public void setDispatcher(InternalDispatcher dispatcher) {
         this.dispatcher = dispatcher;
     }
-
-    InternalDispatcher dispatcher;
 
     void pressButton(int destination, ElevatorCar elevatorCar) {
         dispatcher.submitInternalRequest(destination, elevatorCar);

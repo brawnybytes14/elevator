@@ -19,7 +19,7 @@ public  class ElevatorController {
      }
 
     public void submitInternalRequest(int floor, ElevatorCar car){
-        if(car.elevatorDirection == Direction.UP) {
+        if(car.elevatorDirection == Direction.DOWN) {
             downMaxPQ.offer(floor);
         } else {
             upMinPQ.offer(floor);

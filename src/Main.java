@@ -16,6 +16,8 @@ public class Main {
         List<ElevatorController> elevatorControllerList = new ArrayList<>();
         elevatorControllerList.add(controller1);
         elevatorControllerList.add(controller2);
+
+
         externalDispatcher.setElevatorControllerList(elevatorControllerList);
         internalDispatcher.setElevatorControllerList(elevatorControllerList);
 
@@ -34,17 +36,14 @@ public class Main {
 
         Building building = new Building(floorList);
 
-
-
         ExternalButtons externalButtons = new ExternalButtons();
         externalButtons.setDispatcher(externalDispatcher);
 
         InternalButtons internalButtons = new InternalButtons();
         internalButtons.setDispatcher(internalDispatcher);
 
-
-
         externalButtons.pressButton(2, Direction.UP);
+
         internalButtons.pressButton(5, new ElevatorCar(2));
     }
 }
